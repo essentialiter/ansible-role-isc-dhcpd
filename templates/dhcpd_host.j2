@@ -37,3 +37,6 @@
 {{ '  ' }}{% include 'dhcpd_options.j2' %}
 {% endfor %}
 {% endif %}
+{% if h.rfc3442_classless_static_routes is defined and h.rfc3442_classless_static_routes != '' %}
+{{ '  option rfc3442-classless-static-routes ' + h.rfc3442_classless_static_routes + ';' }}
+{% endif %}
